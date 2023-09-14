@@ -11,6 +11,7 @@ body {
     min-height: 100vh;
     color: var(--body-text);
 }
+
 a {
     text-decoration: none;
 }
@@ -24,6 +25,7 @@ header {
     padding: 0.5rem 30px;
     background-color: var(--bg_default);
 }
+
 header .header-btns {
     display: flex;
     align-items: center;
@@ -34,7 +36,8 @@ header .name {
     color: var(--brand-primary);
 }
 
-header .header-btns .theme-btn,.header-btns .favourite-btn{
+header .header-btns .theme-btn,
+.header-btns .favourite-btn {
     color: var(--body-text);
     padding: 5px;
     width: 110px;
@@ -47,14 +50,16 @@ header .header-btns .theme-btn,.header-btns .favourite-btn{
     background-color: var(--bg_default);
     gap: 5px;
 }
-header .header-btns .favourite-btn:hover{
-    background-color:rgb(rgb(202, 132, 132)) ;
+
+header .header-btns .favourite-btn:hover {
+    background-color: rgb(rgb(202, 132, 132));
 }
+
 /* welcom section*/
 section.welcom-section {
     display: flex;
     justify-content: center;
-    align-items: center;   
+    align-items: center;
     background-color: var(--bg_default);
     height: 160px;
     position: relative;
@@ -69,6 +74,7 @@ section.welcom-section::before {
     background-image: linear-gradient(to right, var(--brand-primary), #08b891);
     z-index: 2;
 }
+
 section.welcom-section::after {
     content: "";
     position: absolute;
@@ -77,12 +83,13 @@ section.welcom-section::after {
     clip-path: polygon(100% 0%, 0% 0%, 100% 45%);
     background-image: linear-gradient(to left, var(--brand-secondary), #0fe9a4);
     z-index: 1;
-} 
+}
 
-section.welcom-section .welcom-content{
+section.welcom-section .welcom-content {
     padding: 1rem;
 }
-section.welcom-section .welcom-content .first-text{
+
+section.welcom-section .welcom-content .first-text {
     font-weight: 700;
     font-size: 1.5rem;
     color: var(--brand-secondary);
@@ -97,12 +104,14 @@ section.welcom-section .welcom-content .first-text{
         clip-path: polygon(100% 0%, 20% 0%, 100% 30%);
     }
 }
+
 /* main */
 main {
     background-color: var(--bg_body);
     width: auto;
     padding: 20px 50px;
 }
+
 /* search section */
 main .search-section {
     display: flex;
@@ -112,63 +121,73 @@ main .search-section {
     border-radius: 10px;
     justify-content: space-between;
 }
+
 main .search-section .search {
     width: 60%;
     display: flex;
-    justify-content:space-between;
-    gap:10px;
+    justify-content: space-between;
+    gap: 10px;
 }
-main .search-section .search .search-icon
-{
+
+main .search-section .search .search-icon {
     padding-left: 1rem;
     height: 50px;
 }
+
 main .search-section .search .search-input {
     width: 800px;
     background-color: var(--bg_default);
     border: none;
 }
 
-main .search-section .select-btns{
+main .search-section .select-btns {
     width: 40%;
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
 }
-main .search-section .select-btns .sort-select,main .search-section .select-btns .filter-select {
+
+main .search-section .select-btns .sort-select,
+main .search-section .select-btns .filter-select {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap:5px;
+    gap: 5px;
     width: 50%;
     padding-left: 1rem;
     padding-right: 1rem;
     border-left: 1px solid var(--lines-color);
 }
+
 main .search-section .select-btns .sort-select select,
-main .search-section .select-btns .filter-select select{
-    border:none;
+main .search-section .select-btns .filter-select select {
+    border: none;
     color: var(--body-text);
-    background-color:var(--bg_default);
+    background-color: var(--bg_default);
     font-weight: 400;
     font-size: 1rem;
 }
+
 main .search-section .select-btns .sort-select label,
-main .search-section .select-btns .filter-select label{
+main .search-section .select-btns .filter-select label {
     font-size: 0.1rem;
 }
+
 @media screen and (max-width: 700px) {
     main .search-section {
         flex-direction: column;
     }
+
     main .search-section .select-btns {
         width: 100%;
     }
-        main .search-section .select-btns .sort-select,
-        main .search-section .select-btns .filter-select {
-            border-left: none;
-            border-top: 1px solid var(--lines-color);
-        }
+
+    main .search-section .select-btns .sort-select,
+    main .search-section .select-btns .filter-select {
+        border-left: none;
+        border-top: 1px solid var(--lines-color);
+    }
 }
+
 /* cards sectoin */
 main .search-result {
     font-size: 2rem;
@@ -176,13 +195,15 @@ main .search-result {
     margin-top: 15px;
     margin-bottom: 20px;
 }
-main .topics-found{
-    width:100%;
+
+main .topics-found {
+    width: 100%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap:10px;
+    gap: 10px;
 }
+
 main .topics-found .card {
     background-color: var(--bg_default);
     border-radius: 5px;
@@ -191,7 +212,7 @@ main .topics-found .card {
     margin-bottom: 10px;
 }
 
-main .topics-found .card-img { 
+main .topics-found .card-img {
     width: 100%;
     height: 140px;
     border-top-right-radius: 5px;
@@ -216,7 +237,7 @@ main .topics-found .card-img {
     margin-left: 16px;
 }
 
-.rating-stars {
+main .topics-found .rating-stars {
     color: rgb(230, 169, 90);
     padding-top: 1rem;
     margin-left: 16px;
@@ -227,14 +248,17 @@ main .topics-found .card-img {
     margin-left: 16px;
     font-weight: 200;
 }
+
 @media screen and (max-width: 600px) {
     main .topics-found {
         flex-direction: column;
     }
-    main .topics-found .course-card {
+
+    main .topics-found .card {
         width: 100%;
     }
 }
+
 /* footer */
 footer {
     background-color: var(--bg_body);
@@ -242,6 +266,7 @@ footer {
     justify-content: center;
     align-items: center;
 }
-footer .footer-icon{
+
+footer .footer-icon {
     color: var(--heart-color);
 }
