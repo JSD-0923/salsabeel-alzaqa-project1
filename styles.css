@@ -206,7 +206,7 @@ main .topics-found {
     display: flex;
     justify-content:flex-start;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 15px;
 }
 
 main .topics-found .card {
@@ -261,13 +261,13 @@ main .topics-found .rating-stars {
     font-weight: 200;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
     main .topics-found {
         flex-direction: column;
     }
 
     main .topics-found .card {
-        width: auto;
+        width: 100%;
     }
 }
 
