@@ -14,7 +14,7 @@
             <div class="header-btns">
                 <button class="theme-btn" id="theme-btn" tabindex="2" role="button" aria-label="change theme button">
                     <ion-icon name="moon-outline"></ion-icon>
-                    <p class="theme-name">Dark Mode</p>
+                    <p class="theme-name" id="theme-name">Dark Mode</p>
                 </button>
                 <button class="favourite-btn" id="favourite-btn" tabindex="3" role="button" aria-label="favourite button">
                     <ion-icon name="heart-outline"></ion-icon>
@@ -23,6 +23,8 @@
             </div>
         </header>
         <section class="welcom-section">
+            <div class="first-shap"></div>
+            <div class="second-shap"></div>
             <div class="welcom-content" aria-label="Welcom content">
                 <p class="first-text">Welcome to our website!</p>
                 <p class="second-text">We have a new design that's fresh, modern, and easy to use.</p>
@@ -455,9 +457,9 @@
                     </div>
                 </div>
             </section>
-            <div class="drawer" id="drawer">
+            <section class="drawer" id="drawer">
                 <div class="drawer-content">
-                    <h2>My Favourite Topics</h2>
+                    <h2 class="drawer-title">My Favourite Topics</h2>
                     <div class="favourite-cards">
                         <div class="favourite-card">
                             <img class="favourite-img" src="./assets/react.webp" alt="favourite card image">
@@ -483,7 +485,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
         <footer>
             <p>Developed with <ion-icon class="footer-icon" name="heart"></ion-icon> &#169; 2023 </p>

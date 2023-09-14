@@ -1,10 +1,11 @@
 const toggleThemeButton = document.getElementById('theme-btn');
-const ThemeButtonName = document.getElementsByClassName('theme-name');
+const ThemeButtonName = document.getElementById('theme-name');
 const openButton = document.getElementById('favourite-btn');
 const drawer = document.getElementById('drawer');
 const htmlElement = document.documentElement;
 toggleThemeButton.addEventListener('click', () => {
-    if (htmlElement.getAttribute('data-theme') === 'light') {
+debugger
+if (htmlElement.getAttribute('data-theme') === 'light') {
         htmlElement.setAttribute('data-theme', 'dark');
         ThemeButtonName.innerHTML = "Light Mode";
     } else {
