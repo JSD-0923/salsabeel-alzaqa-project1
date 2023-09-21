@@ -1,6 +1,6 @@
 # salsabeel-alzaqa-project1
 
-[Live Demo](https://jsd-0923.github.io/salsabeel-alzaqa-project1/details.html) 
+[Live Demo](https://jsd-0923.github.io/salsabeel-alzaqa-project1/) 
 
 | Light Mode        | Dark Mode                                                          |
 | ----------------- | ------------------------------------------------------------------ |
