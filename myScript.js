@@ -13,7 +13,7 @@ toggleThemeButton.addEventListener('click', () => {
     }
 });
 function moveToDetails() {
-    window.location.href = "/details.html";
+    window.location.href = "https://jsd-0923.github.io/salsabeel-alzaqa-project1/details.html";
 }
 function handleKeyPress(event) {
     if (event.key === 'Enter') {
