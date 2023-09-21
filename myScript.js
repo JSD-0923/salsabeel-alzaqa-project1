@@ -11,7 +11,7 @@ toggleThemeButton.addEventListener('click', () => {
     }
 });
 function moveToDetails() {
-    window.location.href = "/details";
+    window.location.href = "/details.html";
 }
 function handleKeyPress(event) {
     if (event.key === 'Enter') {
