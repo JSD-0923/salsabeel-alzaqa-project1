@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="CSS/variables.css">
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <link rel="stylesheet" type="text/css" href="CSS/details.css">
+    <title>Web Topics</title>
+</head>
+
+<body>
+    <header>
+        <a href="/" class="name" id="name" aria-label="the website name" tabindex="1">Web Topics</a>
+        <div class="header-btns">
+            <button class="theme-btn" id="theme-btn" tabindex="2" role="button" aria-label="change theme button">
+                <ion-icon name="moon-outline"></ion-icon>
+                <p id="theme-name">Dark Mode</p>
+            </button>
+            <button class="favourite-btn" id="favourite-btn" tabindex="3" role="button" aria-label="favourite button">
+                <ion-icon name="heart-outline"></ion-icon>
+                <p>Favourite</p>
+            </button>
+        </div>
+    </header>
+    <section class="welcom-section">
+        <div class="first-shap"></div>
+        <div class="second-shap"></div>
+        <div class="welcom-content" aria-label="Welcom content">
+            <p class="first-text">Welcome to our website!</p>
+            <p class="second-text">We have a new design that's fresh, modern, and easy to use.</p>
+        </div>
+    </section>
+    <main class="details-page-main">
+        <section class="card-details">
+            <div class="details-container">
+            <div class="card-content">
+                <p class="card-title">Web development Languages</p>
+                <h2 class="card-name">HTML</h2>
+                <div class="rating-stars">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <br>
+                <p class="card-description">HTML (Hypertext Markup Language) is a text-based approach to describing how content contained within an HTML file is
+                structured. This markup tells a web browser how to display text, images and other forms of multimedia on a webpage.
+                HTML is a formal recommendation by the World Wide Web Consortium (W3C) and is generally adhered to by all major web
+                browsers, including both desktop and mobile web browsers. HTML5 is the latest version of the specification.</p>
+            </div>
+            <div class="add-to-fav-card">
+                <div class="img-container">
+                    <img class="card-img" src="./assets/javascript.jpg" alt="html image">
+                    <p class="link"><b>HTML</b> by <a href="#" class="author-link">Sarah Smith</a></p>  
+                </div>
+                <div class="add-to-fav">
+                    <p>Intrested about this topic ?</p>
+                    <button class="add-to-fav-btn">
+                        <p>Add To Favourite</p>
+                        <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+                    <p class="credits">Unlimited Credits</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="topic-list">
+            <h2 class="topic-title">HTML Sub Topics<h2>
+            <div class="topic-item"><ion-icon class="marked-icon" name="checkmark-circle-outline"></ion-icon> HTML syntax and structure</div>
+            <div class="topic-item"><ion-icon class="marked-icon" name="checkmark-circle-outline"></ion-icon> HTML elements and attributes</div>
+            <div class="topic-item"><ion-icon class="marked-icon" name="checkmark-circle-outline"></ion-icon> HTML forms and input elements</div>
+            <div class="topic-item"><ion-icon class="marked-icon" name="checkmark-circle-outline"></ion-icon> HTML tables and lists</div>
+            <div class="topic-item"><ion-icon class="marked-icon" name="checkmark-circle-outline"></ion-icon> HTML multimedia elements (audio,video,images)</div>
+            <div class="topic-item"><ion-icon class="marked-icon" name="checkmark-circle-outline"></ion-icon> HTML accessibility and semantic markup</div>
+        </section>
+        <section class="drawer" id="drawer">
+            <div class="drawer-content">
+                <h2 class="drawer-title">My Favourite Topics</h2>
+                <div class="favourite-cards">
+                    <div class="favourite-card">
+                        <img class="favourite-img" src="./assets/react.webp" alt="favourite card image">
+                        <h4 class="favourite-title">React</h4>
+                        <div class="rating-stars">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="favourite-card">
+                        <img class="favourite-img" src="./assets/responsive.gif" alt="favourite card image">
+                        <h4 class="favourite-title">Responsive Design</h4>
+                        <div class="rating-stars">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Developed with <ion-icon class="footer-icon" name="heart"></ion-icon> &#169; 2023 </p>
+    </footer>
+    <script src="myScript.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
