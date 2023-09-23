@@ -1,6 +1,7 @@
 const toggleThemeButton = document.getElementById('theme-btn');
 const ThemeButtonName = document.getElementById('theme-name');
 const openButton = document.getElementById('favourite-btn');
+const nameLink = document.getElementById('name');
 const drawer = document.getElementById('drawer');
 const htmlElement = document.documentElement;
 toggleThemeButton.addEventListener('click', () => {
@@ -12,9 +13,12 @@ toggleThemeButton.addEventListener('click', () => {
         ThemeButtonName.innerHTML = "Dark Mode";
     }
 });
+nameLink.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.href = 'index.html';
+  });
 function moveToDetails() {
-    let link = window.location.hostname;
-    window.location.href = `${link}details.html`;
+    window.location.href = 'details.html';
 }
 function handleKeyPress(event) {
     if (event.key === 'Enter') {
