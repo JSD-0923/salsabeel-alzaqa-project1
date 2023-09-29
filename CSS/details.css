@@ -46,15 +46,15 @@ main.details-page-main .card-details .add-to-fav-card{
     flex-direction: column;
 }
 main.details-page-main .card-details .add-to-fav-card .img-container{
-    height: 60%;
+    height: auto;
     width: 100%;
 }
 main.details-page-main .card-details .add-to-fav-card .img-container img{
     padding: 2px;
     height: 100%;
     width: 100%;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    border-top-right-radius: var(--base-border-radius);
+    border-top-left-radius: var(--base-border-radius);
 }
 @media screen and (max-width:950px) {
     main.details-page-main .card-details .details-container {
@@ -83,7 +83,7 @@ main.details-page-main .card-details .add-to-fav-card .link .author-link
     cursor: pointer;
 }
 main.details-page-main .card-details .add-to-fav-card .link{
-    padding-top: 5px;
+    padding-top: var(--base-padding);
     padding-left: 15px;
 }
 main.details-page-main .card-details .add-to-fav-card .add-to-fav
@@ -99,7 +99,7 @@ main.details-page-main .card-details .add-to-fav-card .add-to-fav
 .credits{
     text-align: center;
     font-weight: 200;
-    font-size: 1rem;
+    font-size: var(--base-font-size);
 }
 .add-to-fav-btn{
     background-color: var(--brand-secondary);
@@ -145,7 +145,7 @@ main.details-page-main .card-details .add-to-fav-card .add-to-fav
     border: 1px solid var(--lines-color);
     padding-left: 15px;
     height: 40px;
-    font-size: 1rem;
+    font-size: var(--base-font-size);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -160,7 +160,7 @@ main.details-page-main .card-details .add-to-fav-card .add-to-fav
     font-weight: 400;
     gap:15px;
     padding-left: 15px;
-    font-size: 1rem;
+    font-size: var(--base-font-size);
 }
 .topic-item .marked-icon{
     color: var(--brand-secondary);
