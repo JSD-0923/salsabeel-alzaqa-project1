@@ -10,7 +10,6 @@ body {
     font-family: 'Nunito Sans', sans-serif;
     min-height: 100vh;
     background-color: var(--bg_body);
-    ;
     color: var(--body-text);
 }
 
@@ -41,9 +40,9 @@ header .name {
 header .header-btns .theme-btn,
 .header-btns .favourite-btn {
     color: var(--body-text);
-    padding: 5px;
+    padding: var(--base-padding);
     width: 110px;
-    border-radius: 5px;
+    border-radius: var(--base-border-radius);
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -89,7 +88,7 @@ section.welcom-section .second-shap {
 
 section.welcom-section .welcom-content {
     padding-top: 2rem;
-    padding-left: 1rem;
+    padding-left: var(--base-padding);
 }
 
 section.welcom-section .welcom-content .first-text {
@@ -113,6 +112,7 @@ main {
     background-color: var(--bg_body);
     width: auto;
     padding: 20px 50px;
+    min-height: 50vh;
 }
 
 /* search section */
@@ -121,19 +121,19 @@ main .search-section {
     width: 100%;
     box-shadow: 0 0 5px rgba(31, 30, 30, 0.2);
     background-color: var(--bg_default);
-    border-radius: 10px;
+    border-radius: var(--base-border-radius);
     justify-content: space-between;
 }
 
 main .search-section .search {
-    width: 60%;
+    width: 70%;
     display: flex;
-    justify-content: space-between;
+    justify-content:flex-start;
     gap: 10px;
 }
 
 main .search-section .search .search-icon {
-    padding-left: 1rem;
+    padding-left: var(--base-padding);
     height: 50px;
 }
 
@@ -144,7 +144,7 @@ main .search-section .search .search-input {
 }
 
 main .search-section .select-btns {
-    width: 40%;
+    width: 30%;
     display: flex;
     justify-content: flex-start;
 }
@@ -155,8 +155,8 @@ main .search-section .select-btns .filter-select {
     flex-direction: column;
     justify-content: center;
     width: 50%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: var(--base-padding);
+    padding-right: var(--base-padding);
     border-left: 1px solid var(--lines-color);
 }
 
@@ -166,14 +166,23 @@ main .search-section .select-btns .filter-select select {
     color: var(--body-text);
     background-color: var(--bg_default);
     font-weight: 400;
-    font-size: 1rem;
+    font-size: var(--base-font-size);
 }
 
 main .search-section .select-btns .sort-select label,
 main .search-section .select-btns .filter-select label {
-    font-size: 0.1rem;
+    font-size: 0.8rem;    
+    padding-left: var(--base-padding);
 }
-
+@media screen and (min-width: 700px) and (max-width: 900px) {
+    main .search-section .search {
+        width:60%;
+    }
+    main .search-section .select-btns {
+        width:40%;
+    }
+    
+}
 @media screen and (max-width: 700px) {
     main .search-section {
         flex-direction: column;
@@ -197,7 +206,7 @@ main .search-section .select-btns .filter-select label {
 
     main .search-section .select-btns .sort-select label,
     main .search-section .select-btns .filter-select label {
-        padding-top: 5px;
+        padding-top: var(--base-padding);
     }
 
     main .search-section .select-btns .sort-select select option,
@@ -216,19 +225,20 @@ main .search-result {
 }
 
 main .topics-found {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 15px;
 }
 
 main .topics-found .card {
     background-color: var(--bg_default);
-    border-radius: 5px;
+    border-radius: var(--base-border-radius);
     height: 330px;
-    width: 300px;
-    margin-bottom: 10px;
+    width: 100%;
     cursor: pointer;
 }
 
@@ -242,47 +252,48 @@ main .topics-found .img-container .card-img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    border-top-right-radius: var(--base-border-radius);
+    border-top-left-radius: var(--base-border-radius);
 }
 
 main .topics-found .card .card-info .card-title {
-    font-size: .5rem;
+    font-size: var(--base-font-size);
     margin-left: 16px;
     font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 main .topics-found .card .card-info {
     display: flex;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     flex-direction: column;
 }
 
 main .topics-found .card .card-info .card-name {
-    font-size: 1rem;
+    font-size: var(--base-font-size);
     font-weight: 700;
     margin-left: 16px;
 }
 
 main .topics-found .rating-stars {
-    color: rgb(230, 169, 90);
-    padding-top: 2rem;
+    color: rgb(245, 153, 15);
+    padding-top: 20px;
+    padding-bottom: var(--base-padding);
     margin-left: 16px;
+    font-size: var(--base-font-size);
 }
 
 main .topics-found .card .card-info .author {
-    font-size: .7rem;
+    font-size: 0.7rem;
     margin-left: 16px;
     font-weight: 200;
 }
 
 @media screen and (max-width: 600px) {
     main .topics-found {
-        flex-direction: column;
-    }
-
-    main .topics-found .card {
-        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -292,6 +303,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: var(--base-padding);
 }
 
 footer .footer-icon {
@@ -303,6 +315,7 @@ footer .footer-icon {
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 170px;
     z-index: 999;
     background-color: var(--bg_default);
     box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.1);
@@ -311,20 +324,14 @@ footer .footer-icon {
 }
 
 .drawer-content {
-    padding: 20px;
+    margin-top: 10px;
     margin-left: 2em;
     color: var(--body-text);
 }
 
-.favourite-cards .favourite-card .favourite-img {
-    height: 50px;
-    width: auto;
-    padding-top: 2px;
-    border-radius: 5px;
-}
-
 .favourite-cards {
     display: flex;
+    padding:var(--base-padding);
     justify-content: flex-start;
     overflow-x: auto;
     gap: 15px;
@@ -332,16 +339,29 @@ footer .footer-icon {
 
 .favourite-cards .favourite-card {
     width: 100px;
-    padding-top: 1rem;
+    margin-top: 10px;
+    border-radius: var(--base-border-radius);
+    box-shadow: 0 0 5px rgba(31, 30, 30, 0.2);
+    display:flex;
+    flex-direction: column;
+    height:100px;
 }
-
+.favourite-cards .favourite-card .favourite-img {
+    height: 50px;
+    width: auto;
+    border-top-right-radius: var(--base-border-radius);
+    border-top-left-radius: var(--base-border-radius);
+}
 .favourite-cards .favourite-card .favourite-title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding-top: 10px;
+    padding-left: var(--base-padding);
 }
 
 .favourite-cards .favourite-card .rating-stars {
+    padding-left: var(--base-padding);
     font-size: 0.8rem;
     color: rgb(230, 169, 90);
 }

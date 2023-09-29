@@ -6,6 +6,9 @@
     --lines-color: #DDDDDD;
     --body-text: #333333;
     --heart-color: #DC143C;
+    --base-font-size: 1rem;
+    --base-border-radius: 5px;
+    --base-padding: 5px;
 }
 :root[data-theme="dark"] {
     --brand-primary: #0768AC;
@@ -15,4 +18,7 @@
     --lines-color: #000000;
     --body-text: #EDEDED;
     --heart-color: #DC143C;
+    --base-font-size: 1rem;
+    --base-border-radius: 5px;
+    --base-padding: 5px;
 }
