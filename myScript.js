@@ -1,16 +1,13 @@
 const toggleThemeButton = document.getElementById('theme-btn');
-const ThemeButtonName = document.getElementById('theme-name');
-const openButton = document.getElementById('favourite-btn');
 const nameLink = document.getElementById('name');
-const drawer = document.getElementById('drawer');
 const htmlElement = document.documentElement;
 toggleThemeButton.addEventListener('click', () => {
     if (htmlElement.getAttribute('data-theme') === 'light') {
         htmlElement.setAttribute('data-theme', 'dark');
-        ThemeButtonName.innerHTML = "Light Mode";
+        toggleThemeButton.innerHTML = `<ion-icon class="moon" name="moon-outline"></ion-icon> Light Mode `;
     } else {
         htmlElement.setAttribute('data-theme', 'light');
-        ThemeButtonName.innerHTML = "Dark Mode";
+        toggleThemeButton.innerHTML = `<ion-icon class="moon" name="moon-outline"></ion-icon> Dark Mode `;
     }
 });
 nameLink.addEventListener('click', function (event) {
@@ -28,12 +25,4 @@ function handleKeyPress(event) {
 document.querySelectorAll('.card').forEach(function(card) {
     card.addEventListener('click', moveToDetails);
     card.addEventListener('keypress', handleKeyPress);
-});
-openButton.addEventListener('click', () => {
-    drawer.style.transform = 'translateY(0)';
-});
-document.body.addEventListener('click', (event) => {
-    if (!drawer.contains(event.target) && event.target !== openButton) {
-        drawer.style.transform = 'translateY(100%)';
-    }
 });

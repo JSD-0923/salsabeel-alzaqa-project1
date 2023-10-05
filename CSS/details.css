@@ -1,173 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,700&display=swap');
-main.details-page-main {
-    padding: 0;
-}
-main.details-page-main .card-details{
-    background-color: #333333;
-    color: #FFFFFF;
-}
-main.details-page-main .card-details .details-container{
-    margin: auto;
-    width: 70%;
-    padding: 1.5rem;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    gap:5px;
-}
-main.details-page-main .card-details .card-content
-{
-    width: 60%;
-}
-@media screen and (max-width:1200px) {
-    main.details-page-main .card-details .card-content {
-        width: 50%;
-    }
-}
-main.details-page-main .card-details .card-content .card-title
-{
-    color:var(--brand-secondary);
-}
-main.details-page-main .card-details .card-content .rating-stars
-{
-    color:rgb(230, 169, 90);
-}
-main.details-page-main .card-details .add-to-fav-card{
-    width:340px;
-    position: absolute;
-    height: 420px;
-    top:1.5rem;
-    background-color: #FFFFFF;
-    color: #282828;
-    right:5px;
-    box-shadow: 0 0 5px rgba(31, 30, 30, 0.2);
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-main.details-page-main .card-details .add-to-fav-card .img-container{
-    height: auto;
-    width: 100%;
-}
-main.details-page-main .card-details .add-to-fav-card .img-container img{
-    padding: 2px;
-    height: 100%;
-    width: 100%;
-    border-top-right-radius: var(--base-border-radius);
-    border-top-left-radius: var(--base-border-radius);
-}
-@media screen and (max-width:950px) {
-    main.details-page-main .card-details .details-container {
-        flex-direction: column-reverse;
-        margin: 0;
-        text-align: center;
-        width:100%;
-        gap: 20px;
-    }
-    main.details-page-main .card-details .card-content {
-            width: 100%;
-        }
-    main.details-page-main .card-details .add-to-fav-card {
-        position: static;
-        margin: auto;
-        height: auto;
-    }
-    body {
-        min-height: 215vh;
-    }
-}
-main.details-page-main .card-details .add-to-fav-card .link .author-link
-{
-    text-decoration:underline;
-    color: var(--brand-primary);
-    cursor: pointer;
-}
-main.details-page-main .card-details .add-to-fav-card .link{
-    padding-top: var(--base-padding);
-    padding-left: 15px;
-}
-main.details-page-main .card-details .add-to-fav-card .add-to-fav
-{
-    margin: 15px;
-    border:1px solid #DDDDDD;
-    padding:5px 20px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    gap: 5px;
-}
-.credits{
-    text-align: center;
-    font-weight: 200;
-    font-size: var(--base-font-size);
-}
-.add-to-fav-btn{
-    background-color: var(--brand-secondary);
-    border: none;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:40px;
-    gap: 5px;
-    font-size: 1.2rem;
-    font-weight: 400;
-    cursor: pointer;
-}
-.add-to-fav-btn:hover{
-    background-color: #008858;
-}
-@media screen and (max-width:950px) {
-    .add-to-fav {
-        position: fixed;
-        width: 100%;
-        left:-15px;
-        bottom: -15px;
-        background-color: var(--bg_default);
-        padding-top: 10px;
-        text-align: center;
-        z-index:3;
-        color:var(--body-text);
-    }
-    .add-to-fav-btn {
-        font-size: 0.5rem;
-    }
-}
 .topic-list{
-    background-color: var(--bg_default);
     width: 40%;
     margin:40px 0;
     margin-left: 220px;
-}
-.topic-title{
-    width: 100%;
-    font-weight: 700;
-    border: 1px solid var(--lines-color);
-    padding-left: 15px;
-    height: 40px;
-    font-size: var(--base-font-size);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-.topic-item{
-    display: flex;
-    justify-content:flex-start;
-    align-items: center;
-    border: 1px solid var(--lines-color);
-    height:40px;
-    width: 100%;
-    font-weight: 400;
-    gap:15px;
-    padding-left: 15px;
-    font-size: var(--base-font-size);
-}
-.topic-item .marked-icon{
-    color: var(--brand-secondary);
 }
 @media screen and (max-width:1100px) {
     .topic-list {
         width: 90%;
         margin: 70px auto;
+    }
+}
+@media (max-width: 992px) {
+    .custom-position-static {
+        position: static !important;
+        width: 70% !important;
+    }
+}
+@media screen and (max-width:950px) {
+    .add-to-fav {
+        position: fixed;
+        width: 100%;
+        left:-8px;
+        bottom: -15px;
+        right: 0;
+        background-color: var(--bg_default);
+        text-align: center;
+        z-index: 3;
+        color: var(--body-text);
+    }
+
+    .add-to-fav-btn {
+        font-size: 0.5rem;
     }
 }
