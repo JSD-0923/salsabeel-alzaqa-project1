@@ -23,7 +23,7 @@
 
 <body>
     <header>
-        <nav class="navbar bg-white">
+        <nav class="navbar">
             <div class="container-fluid">
                 <a href="index.html" class="navbar-brand text-primary" id="name" aria-label="the website name"
                     tabindex="1">Web Topics</a>
@@ -52,8 +52,8 @@
         </div>
     </section>
     <main>
-        <section>
-            <form class="bg-white row g-0 shadow-sm rounded" style="height: min-content;">
+        <section class="search-select">
+            <form class="bg-white row g-0 shadow-sm rounded mb-3" style="height: min-content;">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-12">
                     <div class="d-flex align-items-center px-3">
                         <ion-icon class="pt-2" name="search-outline"></ion-icon>
@@ -86,14 +86,14 @@
             </form>
         </section>
         <section class="search-result">
-            "24" Web Topics Found
+            <p class="fs-2 fw-bold">"24" Web Topics Found</p>
         </section>
         <section class="topics-found">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-6">
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/html.png" class="card-img-top" alt="HTML card image">
+                            <img src="./assets/html.png" class="card-img-top object-fit-fill" alt="HTML card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Web Development Languages</p>
@@ -112,7 +112,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/css.webp" class="card-img-top" alt="CSS card image">
+                            <img src="./assets/css.webp" class="card-img-top object-fit-fill" alt="CSS card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Web Development Languages</p>
@@ -131,7 +131,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/javascript.jpg" class="card-img-top" alt="JavaScript card image">
+                            <img src="./assets/javascript.jpg" class="card-img-top object-fit-fill" alt="JavaScript card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Web Development Languages</p>
@@ -150,7 +150,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/jquery.png" class="card-img-top" alt="jQuery card image">
+                            <img src="./assets/jquery.png" class="card-img-top object-fit-fill" alt="jQuery card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Frontend Frameworks and Libraries</p>
@@ -169,7 +169,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/angular.png" class="card-img-top" alt="Angular card image">
+                            <img src="./assets/angular.png" class="card-img-top object-fit-fill" alt="Angular card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Frontend Frameworks and Libraries</p>
@@ -188,7 +188,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/react.webp" class="card-img-top" alt="React card image">
+                            <img src="./assets/react.webp" class="card-img-top object-fit-fill" alt="React card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Frontend Frameworks and Libraries</p>
@@ -207,7 +207,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/vuejs.jpeg" class="card-img-top" alt="Vue.js card image">
+                            <img src="./assets/vuejs.jpeg" class="card-img-top object-fit-fill" alt="Vue.js card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Frontend Frameworks and Libraries</p>
@@ -226,7 +226,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/nodejs.webp" class="card-img-top" alt="Node.js card image">
+                            <img src="./assets/nodejs.webp" class="card-img-top object-fit-fill" alt="Node.js card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Backend Frameworks and Libraries</p>
@@ -245,7 +245,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/expressjs.webp" class="card-img-top" alt="Express.js card image">
+                            <img src="./assets/expressjs.webp" class="card-img-top object-fit-fill" alt="Express.js card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Backend Frameworks and Libraries</p>
@@ -264,7 +264,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/ruby.jpeg" class="card-img-top" alt="Ruby card image">
+                            <img src="./assets/ruby.jpeg" class="card-img-top object-fit-fill" alt="Ruby card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Backend Frameworks and Libraries</p>
@@ -283,7 +283,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/django.jpeg" class="card-img-top" alt="Django card image">
+                            <img src="./assets/django.jpeg" class="card-img-top object-fit-fill" alt="Django card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Backend Frameworks and Libraries</p>
@@ -302,7 +302,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/flask.webp" class="card-img-top" alt="Flask card image">
+                            <img src="./assets/flask.webp" class="card-img-top object-fit-fill" alt="Flask card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Backend Frameworks and Libraries</p>
@@ -321,7 +321,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/sql.png" class="card-img-top" alt="SQL card image">
+                            <img src="./assets/sql.png" class="card-img-top object-fit-fill" alt="SQL card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Databases and APIs</p>
@@ -340,7 +340,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/nosql.png" class="card-img-top" alt="NoSQL card image">
+                            <img src="./assets/nosql.png" class="card-img-top object-fit-fill" alt="NoSQL card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Databases and APIs</p>
@@ -359,7 +359,7 @@
                 <div class="col mb-3">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img src="./assets/restapi.jpeg" class="card-img-top" alt="REST APIs card image">
+                            <img src="./assets/restapi.jpeg" class="card-img-top object-fit-fill" alt="REST APIs card image">
                         </div>
                         <div class="card-body">
                             <p class="card-title">Databases and APIs</p>
@@ -384,7 +384,7 @@
             </div>
             <div class="offcanvas-body d-flex flex-wrap flex-row justify-content-start gap-2 overflow-y-auto">
                 <div class="card shadow-sm rounded" style="height:max-content;width: 9rem;">
-                    <img class="card-img-top" src="./assets/react.webp" alt="favourite card image" height="70">
+                    <img class="card-img-top object-fit-fill" src="./assets/react.webp" alt="favourite card image" height="70">
                     <div class="card-body">
                         <p class="card-title">React</p>
                         <div class="text-warning">
@@ -397,7 +397,7 @@
                     </div>
                 </div>
                 <div class="card shadow-sm rounded" style="height:max-content;width: 9rem;">
-                    <img class="card-img-top" src="./assets/responsive.gif" alt="favourite card image" height="70">
+                    <img class="card-img-top object-fit-fill" src="./assets/responsive.gif" alt="favourite card image" height="70">
                     <div class="card-body">
                         <p class="card-title">Responsive Design</p>
                         <div class="text-warning">

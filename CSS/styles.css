@@ -4,14 +4,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Nunito Sans', sans-serif;
     min-height: 100vh;
     background-color: var(--bg_body);
     color: var(--body-text);
 }
-
 a {
     text-decoration: none;
 }
@@ -24,7 +22,18 @@ p{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
+nav{
+    background-color:var(--bg_default);
+}
+.offcanvas{
+    --bs-offcanvas-bg:var(--bg_default);
+    --bs-offcanvas-color:var(--body-text);
+}
+.topics-found .card,.offcanvas .card {
+    --bs-card-bg: var(--bg_default);
+    --bs-card-title-color:var(--body-text);
+    --bs-card-color:var(--body-text);
+}
 /* welcom section*/
 section.welcom-section {
     display: flex;
@@ -34,7 +43,6 @@ section.welcom-section {
     height: 120px;
     position: relative;
 }
-
 section.welcom-section .first-shap {
     content: "";
     position: absolute;
@@ -44,7 +52,6 @@ section.welcom-section .first-shap {
     background-image: linear-gradient(to right, var(--brand-primary), #08b891);
     z-index: 2;
 }
-
 section.welcom-section .second-shap {
     content: "";
     position: absolute;
@@ -74,12 +81,6 @@ main {
     min-height: 50vh;
 }
 /* cards sectoin */
-main .search-result {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-top: 15px;
-    margin-bottom: 20px;
-}
 main .topics-found .card .img-container {
     height: 50%;
     width: 100%;
@@ -88,5 +89,4 @@ main .topics-found .card .img-container {
 main .topics-found .img-container img {
     height: 100%;
     width: 100%;
-    object-fit:fill;
 }
