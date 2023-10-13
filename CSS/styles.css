@@ -138,7 +138,7 @@ main .search-section .search .search-icon {
 }
 
 main .search-section .search .search-input {
-    width: 800px;
+    width: 100%;
     background-color: var(--bg_default);
     border: none;
 }
