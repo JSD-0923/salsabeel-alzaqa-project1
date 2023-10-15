@@ -130,7 +130,7 @@ main.details-page-main .card-details .add-to-fav-card .add-to-fav
         color:var(--body-text);
     }
     .add-to-fav-btn {
-        font-size: 0.5rem;
+        font-size: 0.8rem;
     }
 }
 .topic-list{

@@ -5,6 +5,7 @@ const nameLink = document.getElementById('name');
 const drawer = document.getElementById('drawer');
 const favouriteCards = document.querySelector(".favourite-cards");
 const htmlElement = document.documentElement;
+const storedTheme = localStorage.getItem('theme');
 function StarIcons(ratingStr) {
     const rating = parseFloat(ratingStr);
     const fullStars = Math.floor(rating);
@@ -31,17 +32,19 @@ toggleThemeButton.addEventListener('click', () => {
     } else {
         htmlElement.setAttribute('data-theme', 'light');
         ThemeButtonName.innerHTML = "Dark Mode";
-        localStorage.setItem('theme', 'light'); 
+        localStorage.setItem('theme', 'light');
     }
 });
-const storedTheme = localStorage.getItem('theme');
-if (storedTheme === 'dark') {
-    htmlElement.setAttribute('data-theme', 'dark');
-    ThemeButtonName.innerHTML = "Light Mode";
-} else {
-    htmlElement.setAttribute('data-theme', 'light');
-    ThemeButtonName.innerHTML = "Dark Mode";
+const mood = () => {
+    if (storedTheme === 'dark') {
+        htmlElement.setAttribute('data-theme', 'dark');
+        ThemeButtonName.innerHTML = "Light Mode";
+    } else {
+        htmlElement.setAttribute('data-theme', 'light');
+        ThemeButtonName.innerHTML = "Dark Mode";
+    }
 }
+mood();
 //To move between pages
 nameLink.addEventListener('click', function (event) {
     event.preventDefault();
@@ -57,6 +60,7 @@ document.body.addEventListener('click', (event) => {
         drawer.style.transform = 'translateY(100%)';
     }
 });
+
 let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
 if (favourites.length === 0) {
     favouriteCards.innerHTML = `<h4>There is nothing to show , Go and add some :) </h4>`;

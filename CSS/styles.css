@@ -202,6 +202,7 @@ main .search-section .select-btns .filter-select label {
         border-left: none;
         border-top: 1px solid var(--lines-color);
         padding-bottom: 0.8rem;
+        width: 50%;
     }
 
     main .search-section .select-btns .sort-select label,
@@ -209,11 +210,10 @@ main .search-section .select-btns .filter-select label {
         padding-top: var(--base-padding);
     }
 
-    main .search-section .select-btns .sort-select select option,
-    main .search-section .select-btns .filter-select select option {
-        width: 50%;
+    main .search-section .select-btns .sort-select select ,
+    main .search-section .select-btns .filter-select select {
+        width: 100%;
     }
-
 }
 
 /* cards sectoin */
@@ -367,10 +367,10 @@ footer .footer-icon {
 }
 /* loading */
 .loading-section{
-    margin-top: 10px;
-    min-height: 50vh;
+    margin-top:100px;
+    height: 300px;
 }
-.loading {
+.loading {    
     margin: auto;
     border: 20px solid var(--brand-primary);
     border-radius: 50%;

@@ -1,5 +1,7 @@
 const detailsCard = document.querySelector(".card-details");
 const topicList = document.querySelector(".topic-list");
+const loading = document.querySelector(".loading-section");
+const addToFavouritesButton = document.querySelector(".add-to-fav-btn");
 const url = window.location.href.split("=")[1];
 const topicId = parseInt(url);
 let detailsData = [];
@@ -116,5 +118,8 @@ const handleAddToFavourites = () => {
     removeFromFavourites(favourites, topicId);
   } else {
     addToFavourites(favourites);
+    addToFavouritesButton.innerHTML = `
+      <p>Remove from Favorites</p>
+    `;
   }
 };
