@@ -1,5 +1,6 @@
-const detailsCard = document.querySelector(".card .container . row");
+const detailsCard = document.querySelector(".card .container");
 const topicList = document.querySelector(".topic-list");
+const loading = document.querySelector(".loading");
 // const url = window.location.href.split("=")[1];
 // const topicId = parseInt(url);
 const topicId = 5;
@@ -39,13 +40,11 @@ const fetching = async(api) =>
     console.error(error);
   }
 }
-//To fetch and display Topics list
-window.addEventListener("load", async () => {
-  detailsData = await fetching(`https://tap-web-1.herokuapp.com/topics/details/${topicId}`);
+const display = () => {
   detailsCard.innerHTML = "";
   topicList.innerHTML = "";
   const detailsContainer = document.createElement("div");
-  detailsContainer.classList.add("container");
+  detailsContainer.classList.add("row");
   const starIcons = StarIcons(detailsData.rating);
   detailsContainer.innerHTML = `
         <div class="col-lg-8 col-md-6 m-auto">
@@ -67,7 +66,7 @@ window.addEventListener("load", async () => {
                             </div>
                             <div class="card-body border m-2 add-to-fav">
                                 <p>Interested in this topic?</p>
-                                <button class="btn btn-sm btn-success add-to-fav-btn w-100">
+                                <button class="btn btn-sm btn-success add-to-fav-btn w-100" onClick=handleAddToFavourites()>
                                     <div class="d-flex align-items-start justify-content-center gap-1">
                                     Add To Favorite
                                     <ion-icon class="pt-1" name="heart-outline"></ion-icon>
@@ -95,6 +94,11 @@ window.addEventListener("load", async () => {
     topicList.appendChild(subtopicElement);
   });
   loading.style.display = "none";
+}
+//To fetch and display Topics list
+window.addEventListener("load", async () => {
+  detailsData = await fetching(`https://tap-web-1.herokuapp.com/topics/details/${topicId}`);
+  display();
 });
 // Function to add a topic to favourites
 function addToFavourites(favourites) {
