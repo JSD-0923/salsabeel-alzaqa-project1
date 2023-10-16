@@ -43,6 +43,7 @@ window.addEventListener("load", async () => {
         </div>
     `;
   detailsCard.appendChild(detailsContainer);
+  //display the sub topics list 
   const topicTitle = document.createElement("h2");
   topicTitle.classList.add("topic-title");
   topicTitle.textContent = `${detailsData.topic} Sub Topics`;
