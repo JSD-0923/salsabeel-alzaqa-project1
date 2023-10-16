@@ -1,3 +1,4 @@
+import { StarIcons , fetching , changeMood , favouriteDrawer } from './myScript.js';
 const topicsContainer = document.querySelector(".topics-found");
 const loading = document.querySelector(".loading-section");
 const searchResult = document.querySelector(".search-result");
@@ -6,42 +7,8 @@ const sortSelect = document.getElementById("sort");
 const filterSelect = document.getElementById("filter");
 const topicsUrl = "https://tap-web-1.herokuapp.com/topics/list";
 let ListData = [];
-//To Drow the rating stars
-function StarIcons(ratingStr) {
-  const rating = parseFloat(ratingStr);
-  const fullStars = Math.floor(rating);
-  const halfStar = rating - fullStars >= 0.5;
-  let starIcons = "";
-  for (let i = 0; i < fullStars; i++) {
-    starIcons += '<ion-icon name="star"></ion-icon>';
-  }
-  if (halfStar) {
-    starIcons += '<ion-icon name="star-half"></ion-icon>';
-  }
-  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-  for (let i = 0; i < emptyStars; i++) {
-    starIcons += '<ion-icon name="star-outline"></ion-icon>';
-  }
-  return starIcons;
-}
-// fetch 
-const fetching = async(api) =>
-{
-  try {
-    loading.style.display = "block";
-    const response = await fetch(api);
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    loading.style.display = "none";
-    topicsContainer.innerHTML =
-      "<p>Something went wrong. Web topics failed to load.</p>";
-    console.error(error);
-  }
-}
+changeMood();
+favouriteDrawer();
 //Display the Card
 function displayCard(data) {
   let tabindex = 7;
