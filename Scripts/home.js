@@ -1,6 +1,5 @@
-import { StarIcons , fetching , changeMood , favouriteDrawer } from './myScript.js';
+import { StarIcons , fetching , changeMood , favouriteDrawer , loading } from './myScript.js';
 const topicsContainer = document.querySelector(".topics-found");
-const loading = document.querySelector(".loading-section");
 const searchResult = document.querySelector(".search-result");
 const searchInput = document.getElementById("search-input");
 const sortSelect = document.getElementById("sort");
@@ -15,7 +14,7 @@ function displayCard(data) {
   if (!Array.isArray(data) || data.length === 0) {
     topicsContainer.innerHTML = "<p>No web topics found.</p>";
     searchResult.innerHTML = "";
-    loading.style.display = "none";
+    loading().style.display = "none";
     return;
   }
   searchResult.innerHTML = `"${data.length}" Web Topics Found`;
@@ -44,7 +43,7 @@ function displayCard(data) {
     });
     tabindex++;
   });
-  loading.style.display = "none";
+  loading().style.display = "none";
 }
 //search
 searchInput.addEventListener("keyup", () => {

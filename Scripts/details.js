@@ -1,18 +1,17 @@
-import { StarIcons , fetching , changeMood , favouriteDrawer } from './myScript.js';
-const detailsCard = document.querySelector(".card-details");
-const topicList = document.querySelector(".topic-list");
-const loading = document.querySelector(".loading-section");
-const addToFavouritesButton = document.querySelector(".add-to-fav-btn");
-const url = window.location.href.split("=")[1];
-const topicId = parseInt(url);
+import { StarIcons , fetching , changeMood , favouriteDrawer , displayFavorite , loading } from './myScript.js';
+const getDetailsCard = () => document.querySelector(".card-details");
+const getTopicList = () => document.querySelector(".topic-list");
+let getFavourites = () => JSON.parse(localStorage.getItem('favourites')) || [];
+const url = window.location.href;
+const params = new URLSearchParams(url.split('?')[1]);
+const topicId = params.get('id');
 let detailsData = [];
 changeMood();
-favouriteDrawer();
 //To fetch and display Topics list
 window.addEventListener("load", async () => {
   detailsData = await fetching(`https://tap-web-1.herokuapp.com/topics/details/${topicId}`);
-  detailsCard.innerHTML = "";
-  topicList.innerHTML = "";
+  getDetailsCard().innerHTML = "";
+  getTopicList().innerHTML = "";
   const detailsContainer = document.createElement("div");
   detailsContainer.classList.add("details-container");
   const starIcons = StarIcons(detailsData.rating);
@@ -34,7 +33,7 @@ window.addEventListener("load", async () => {
             </div>
             <div class="add-to-fav">
                 <p>Interested in this topic?</p>
-                <button class="add-to-fav-btn" onclick="handleAddToFavourites()">
+                <button class="add-to-fav-btn">
                     <p>Add To Favorite</p>
                     <ion-icon name="heart-outline"></ion-icon>
                 </button>
@@ -42,12 +41,12 @@ window.addEventListener("load", async () => {
             </div>
         </div>
     `;
-  detailsCard.appendChild(detailsContainer);
+  getDetailsCard().appendChild(detailsContainer);
   //display the sub topics list 
   const topicTitle = document.createElement("h2");
   topicTitle.classList.add("topic-title");
   topicTitle.textContent = `${detailsData.topic} Sub Topics`;
-  topicList.appendChild(topicTitle);
+  getTopicList().appendChild(topicTitle);
   detailsData.subtopics.forEach((subtopic) => {
     const subtopicElement = document.createElement("div");
     subtopicElement.classList.add("topic-item");
@@ -57,9 +56,11 @@ window.addEventListener("load", async () => {
     const subtopicText = document.createTextNode(subtopic);
     subtopicElement.appendChild(markedIcon);
     subtopicElement.appendChild(subtopicText);
-    topicList.appendChild(subtopicElement);
+    getTopicList().appendChild(subtopicElement);
   });
-  loading.style.display = "none";
+  favouriteDrawer();
+  loading().style.display = "none";
+  requestAnimationFrame(attachClickHandlers);
 });
 // Function to add a topic to favourites
 function addToFavourites(favourites) {
@@ -73,7 +74,7 @@ function addToFavourites(favourites) {
   localStorage.setItem("favourites", JSON.stringify(favourites));
 }
 // Function to remove a topic from favourites
-function removeFromFavourites(favourites, topicId) {
+function removeFromFavourites(favourites , topicId) {
   const index = favourites.findIndex((e) => e.id === topicId);
   if (index !== -1) {
     favourites.splice(index, 1);
@@ -81,14 +82,20 @@ function removeFromFavourites(favourites, topicId) {
   }
 }
 // To the "Add to Favourites" button
-const handleAddToFavourites = () => {
-  let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+function handleAddToFavourites() {
+  const favourites = getFavourites();
   if (favourites.some((favourite) => favourite.id === topicId)) {
-    removeFromFavourites(favourites, topicId);
+    removeFromFavourites(favourites,topicId);
   } else {
     addToFavourites(favourites);
-    addToFavouritesButton.innerHTML = `
-      <p>Remove from Favorites</p>
-    `;
   }
-};
+  favouriteDrawer();
+}
+function attachClickHandlers() {
+  const addButtons = document.querySelectorAll(".add-to-fav-btn");
+  addButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      requestAnimationFrame(handleAddToFavourites);
+    });
+  });
+}

@@ -2,9 +2,11 @@ const toggleThemeButton = document.getElementById('theme-btn');
 const ThemeButtonName = document.getElementById('theme-name');
 const openButton = document.getElementById('favourite-btn');
 const drawer = document.getElementById('drawer');
-const favouriteCards = document.querySelector(".favourite-cards");
+const favouriteCards = () => document.querySelector(".favourite-cards");
 const htmlElement = document.documentElement;
-const storedTheme = localStorage.getItem('theme');
+const storedTheme = () => localStorage.getItem('theme');
+let getFavourites = () => JSON.parse(localStorage.getItem('favourites')) || [];
+export const loading = () => document.querySelector(".loading-section");
 //drow stars
 export const StarIcons = (ratingStr) => {
     const rating = parseFloat(ratingStr);
@@ -27,7 +29,7 @@ export const StarIcons = (ratingStr) => {
 export const fetching = async(api) =>
 {
   try {
-    loading.style.display = "block";
+    loading().style.display = "block";
     const response = await fetch(api);
     if (!response.ok) {
       throw new Error("Failed to fetch data");
@@ -35,15 +37,15 @@ export const fetching = async(api) =>
     const data = await response.json();
     return data;
   } catch (error) {
-    loading.style.display = "none";
-    topicsContainer.innerHTML =
+    // loading().style.display = "none";
+    loading().innerHTML =
       "<p>Something went wrong. Web topics failed to load.</p>";
     console.error(error);
   }
 }
 //To change the mode -light/dark-
 export const changeMood = () => {
-    if (storedTheme === 'dark') {
+    if (storedTheme() === 'dark') {
         htmlElement.setAttribute('data-theme', 'dark');
         ThemeButtonName.innerHTML = "Light Mode";
     } else {
@@ -62,23 +64,13 @@ export const changeMood = () => {
         }
     });
 }
-//favourite drawer
-export const favouriteDrawer = () => {
-    openButton.addEventListener('click', () => {
-        drawer.style.transform = 'translateY(0)';
-
-    });
-    document.body.addEventListener('click', (event) => {
-        if (!drawer.contains(event.target) && event.target !== openButton) {
-            drawer.style.transform = 'translateY(100%)';
-        }
-    });
-    let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
-    if (favourites.length === 0) {
-        favouriteCards.innerHTML = `<h4>There is nothing to show , Go and add some :) </h4>`;
+//display cards on favourite drawer
+export const displayFavorite = () => {
+    if (getFavourites().length === 0) {
+        favouriteCards().innerHTML = `<h4>There is nothing to show , Go and add some :) </h4>`;
     } else {
-        favouriteCards.innerHTML = '';
-        favourites.forEach((favourite) => {
+        favouriteCards().innerHTML = '';
+        getFavourites().forEach((favourite) => {
             const favouriteCard = document.createElement("div");
             favouriteCard.classList.add("favourite-card");
             const starIcons = StarIcons(favourite.rating);
@@ -89,7 +81,19 @@ export const favouriteDrawer = () => {
                             ${starIcons}
                         </div>
         `;
-            favouriteCards.appendChild(favouriteCard);
+            favouriteCards().appendChild(favouriteCard);
         });
     }
+}
+//favourite drawer
+export const favouriteDrawer = () => {
+    openButton.addEventListener('click', () => {
+        drawer.style.transform = 'translateY(0)';
+    });
+    document.body.addEventListener('click', (event) => {
+        if (!drawer.contains(event.target) && event.target !== openButton) {
+            drawer.style.transform = 'translateY(100%)';
+        }
+    });
+    displayFavorite();
 }
